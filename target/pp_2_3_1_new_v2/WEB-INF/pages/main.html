@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button><a href="main/addUser">add user</a></button>
+<br>
+<button><a href="main/updateUser">update user</a></button>
+<br>
+<button><a href="main/deleteUser">delete user</a></button>
+<th th:each="user : ${listUsers}">
+    <h2 th:text="${user}"></h2>
+</th>
+</body>
+</html>

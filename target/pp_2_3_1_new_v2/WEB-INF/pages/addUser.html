@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>add user</title>
+</head>
+<body>
+<form th:method="POST" th:action="/main" th:object="${user}">
+  <label for="name">Name</label>
+  <input name = "name" type="text" id = "name" />
+<!--  <input type="text" th:field="*{name}" id="name"/>-->
+  <br>
+
+  <label for="lastName">last_name</label>
+  <input name = "last_name" type="text" id = "lastName" />
+<!--  <input type="text" th:field="*{lastName}" id="lastName"/>-->
+  <br>
+
+  <label for="age">age</label>
+  <input name = "age" type="text" id = "age" />
+<!--  <input type="text" th:field="*{age}" id="age"/>-->
+  <br>
+
+<!--  <label for="email">email</label>-->
+<!--  <input name = "email" type="text" id = "email" />-->
+<!--&lt;!&ndash;  <input type="text" th:field="*{email}" id="email"/>&ndash;&gt;-->
+<!--  <br>-->
+
+<!--  <label for="car">car</label>-->
+<!--  <input name = "car" type="text" id = "car" />-->
+<!--&lt;!&ndash;  <input type="text" th:field="*{car}" id="car"/>&ndash;&gt;-->
+<!--  <br>-->
+
+  <input type="submit" value="add user">
+</form>
+</body>
+</html>
