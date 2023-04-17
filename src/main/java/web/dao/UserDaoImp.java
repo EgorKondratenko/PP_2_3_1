@@ -8,26 +8,40 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 @Service
 public class UserDaoImp implements UserDao {
-    @PersistenceContext
-    private EntityManager entityManager;
 
+@PersistenceContext
+private EntityManager entityManager;
     @Override
-    public void addUser(User user) {
-        entityManager.persist(user);
+    public List<User> getall() {
+        return entityManager.createQuery("from User", User.class)
+                .getResultList();
     }
 
     @Override
-    public void updateUser(User user) {
+    public void addUser(User user) {
         entityManager.merge(user);
     }
 
     @Override
-    public void deleteUser(Long id) {
-        entityManager.remove(entityManager.find(User.class, id));
+    public User getUser(Long id) {
+        return entityManager.find(User.class,id);
     }
 
     @Override
-    public List<User> listUsers() {
-        return entityManager.createQuery("from User", User.class).getResultList();
+    public void deleteUser(Long id) {
+        entityManager.remove(getUser(id));
     }
+
+    @Override
+    public void updateUser(User user, Long id) {
+        user = getUser(id);
+        user.setName(user.getName());
+        user.setLastName(user.getLastName());
+        user.setAge(user.getAge());
+        user.setEmail(user.getEmail());
+        user.setCar(user.getCar());
+        entityManager.persist(user);
+    }
+
+
 }
