@@ -1,37 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>add user</title>
+  <link rel="stylesheet" type="text/css" href="/css/users_style.css"/>
+  <title>add User</title>
 </head>
 <body>
-<form th:method="POST" th:action="/main" th:object="${user}">
+<form  method="POST" modelAttribute="user">
   <label for="name">Name</label>
-  <input name = "name" type="text" id = "name" />
-<!--  <input type="text" th:field="*{name}" id="name"/>-->
-  <br>
+  <input type="text" name="name" id="name">
 
-  <label for="lastName">last_name</label>
-  <input name = "last_name" type="text" id = "lastName" />
-<!--  <input type="text" th:field="*{lastName}" id="lastName"/>-->
-  <br>
+  <label for="lastname">Lastname</label>
+  <input type="text" name="lastname" id="lastname">
 
-  <label for="age">age</label>
-  <input name = "age" type="text" id = "age" />
-<!--  <input type="text" th:field="*{age}" id="age"/>-->
-  <br>
+  <label for="age">Age</label>
+  <input type="text" name="age" id="age">
 
-<!--  <label for="email">email</label>-->
-<!--  <input name = "email" type="text" id = "email" />-->
-<!--&lt;!&ndash;  <input type="text" th:field="*{email}" id="email"/>&ndash;&gt;-->
-<!--  <br>-->
+  <label for="email">Email</label>
+  <input type="text" name="email" id="email">
 
-<!--  <label for="car">car</label>-->
-<!--  <input name = "car" type="text" id = "car" />-->
-<!--&lt;!&ndash;  <input type="text" th:field="*{car}" id="car"/>&ndash;&gt;-->
-<!--  <br>-->
+  <label for="car">Car</label>
+  <input type="text" name="car" id="car">
 
-  <input type="submit" value="add user">
+  <input type="submit" value="Add user">
 </form>
 </body>
 </html>
